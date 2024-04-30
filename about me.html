@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Trendy Portfolio</title>
+    <!-- Link to Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS for trendy design and animations -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #220319, #554e59); /* Gradient background */
+            color: white;
+            overflow-x: hidden; /* Prevents horizontal scrollbars */
+        }
+        .header {
+            text-align: center;
+            padding: 40px;
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            transition: all 0.3s;
+        }
+        .content:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Larger shadow on hover */
+        }
+        .profile {
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            transition: transform 0.3s; /* Smooth transitions */
+            cursor: pointer; /* Indicate interactivity */
+        }
+        .profile img:hover {
+            transform: scale(1.2); /* Scale the image on hover */
+        }
+        .popup {
+            position: absolute; /* Position the pop-up */
+            top: 50%; /* Vertical alignment */
+            left: 50%; /* Horizontal alignment */
+            transform: translate(-50%, -50%); /* Center the pop-up */
+            padding: 10px; /* Padding for the text */
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            display: none; /* Initially hidden */
+            z-index: 10; /* Ensures it's above other elements */
+        }
+        .profile:hover .popup {
+            display:flex; /* Show the pop-up on hover */
+        }
+        .profile img:hover {
+            transform: scale(1.2); /* Scale the image on hover */
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between links */
+            margin-top: 20px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #333;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 1px solid #333; /* Border for links */
+        }
+        .links a:hover {
+            background-color: #333;
+            color: white; /* Change color on hover */
+        }
+        .skills {
+            display: flex;
+            justify-content: flex-start;
+            white-space: nowrap; /* Prevents wrapping */
+            overflow-x: hidden; /* Hides the scrolling overflow */
+            position: relative;
+            margin-top: 20px; /* Position below the profile section */
+        }
+        .skills-content {
+            display: inline-block;
+            animation: scroll 10s infinite linear; /* Continuous scrolling animation */
+        }
+        .skill {
+            display: inline-block; /* Horizontal scrolling */
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            border-radius: 10px; /* Rounded corners */
+            margin-right: 20px; /* Space between skills */
+            font-size: 18px;
+            transition: transform 0.3s; /* Smooth transitions */
+        }
+        .skill:hover {
+            transform: scale(1.1); /* Scale on hover */
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%); /* Scroll horizontally */
+            }
+        }
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between project cards */
+            flex-wrap: wrap; /* Wraps project cards */
+            text-align: center;
+            margin-top: 40px;
+        }
+        .project-card {
+            background: rgba(80, 15, 43, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            text-align: center; /* Center content */
+            width: 250px;
+            cursor: pointer; /* Indicates interactivity */
+            position: relative;
+            overflow: hidden; /* Hide overflowed content */
+        }
+        .project-card:hover {
+            transform: scale(1.05); /* Scale on hover */
+        }
+        .project-card .details {
+            position: absolute;
+            top: 100%; /* Initially hidden */
+            left: 0;
+            width: 100%;
+            background: rgba(9, 9, 9, 0.9); /* Semi-transparent background */
+            padding: 10px;
+            transition: transform 0.3s; /* Smooth transition */
+            text-align: left;
+        }
+        .project-card:hover .details {
+            transform: translateY(-100%); /* Reveal details on hover */
+        }
+        .project-card a {
+            text-decoration: none; /* No underline */
+            color: #333; /* Default text color */
+        }
+        .project-card a:hover {
+            color: #0072ff; /* Change color on hover */
+        }
+        .contact p {
+            margin: 10px 0;
+        }
+        .education {
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">My Portfolio</div>
+
+    <div class="content">
+        <!-- Profile Section with Orbiting Social Media Icons -->
+        <div class="profile">
+            <img src="C:\Users\91974\Desktop\PROJECTS\portfolio\WhatsApp Image 2024-04-25 at 16.04.57_62abefdb.jpg" alt="Profile Picture">
+            <h2>DHIVYA ANTONY</h2>
+
+            <p>I'm a web developer specializing in interactive projects.</p>
+             <!-- Pop-Up with Education Details -->
+             <div class="popup">
+                <p>Bachelor's Degree in Computer Science, Magalore University, 2023</p>
+            </div>
+        </div>
+              <!-- Links Section -->
+        <div class="links">
+            <a href="https://github.com/Dhivyaantony" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/dhivya-antony-228067268/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="C:\Users\91974\Desktop\PROJECTS\portfolio\DHIVYA ANTONY (15).pdf" download="John_Doe_Resume">
+                <i class="fa-solid fa-file"></i> Download Resume
+            </a>
+        </div>
+        </div>
+
+        <!-- Horizontal Scrolling Skills Section -->
+        <div class="skills">
+            <div class="skills-content"> <!-- The container for scrolling -->
+                <span class="skill">Web Development</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">MongoDB</span>
+                <span class="skill">COMMUNICATION SKILL</span>
+                <span class="skill">MICROSOFTOFFICE</span>
+                <span class="skill">VB.NET</span>
+                <span class="skill">C</span>
+                <span class="skill">C++</span>
+            </div>
+        </div>
+
+         <!-- Project Showcase -->
+         <div class="projects">
+            <div class="project-card" onclick="window.open('https://github.com/YourGitHubUsername/project1', '_blank')">
+                <h3>Project 1: Book Your Turf</h3>
+                <div class="details">
+                    <p>MERN Stack project for booking sports turfs online.</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="window.open('https://github.com/YourGitHubUsername/project2', '_blank')">
+                <h3>Project 2: Task Organization</h3>
+                <div class="details">
+                    <p>Web application built with React and Node.js.</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="window.open('https://github.com/YourGitHubUsername/project3', '_blank')">
+                <h3>Project 3: Open-Source Contributions</h3>
+                <div class="details">
+                    <p>Contributions to GitHub-based projects and open-source software.</p>
+                </div>
+            </div>
+        </div>
+
+ <!-- Education Section -->
+ <div class="education" id="education">
+   
+        <!-- Contact Section -->
+        <div class="contact">
+            <h3>Contact Me</h3>
+            <p>Email: dhivyaantony778@gmail.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
